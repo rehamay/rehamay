@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:remoo/introScreens/introPage1.dart';
 import 'package:remoo/introScreens/introPage2.dart';
 import 'package:remoo/introScreens/introPage3.dart';
-import 'package:remoo/splashScreen.dart';
+import 'package:remoo/welcome.dart';
 import 'package:remoo/users_schools.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';

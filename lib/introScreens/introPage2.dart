@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/main.dart';
-
 import 'introPage3.dart';
 
 class IntroPage2 extends StatelessWidget {
-
-
   @override
 
   Widget build(BuildContext context) {
@@ -34,13 +30,7 @@ class IntroPage2 extends StatelessWidget {
                           IntroPage3()));
             }, child: Text('skip'))
           ],
-
-
-
-
-),
-
-
+        ),
 
         body:
         Stack(
@@ -48,10 +38,7 @@ class IntroPage2 extends StatelessWidget {
             clipper:BigClipper(),
         child: Container(color: Color(0XFFCDDDF9),),
         ),
-
-
-           
-               Align(
+            Align(
                    alignment:Alignment(-0.70,-1.0) ,
                    child: Padding(
                      padding: const EdgeInsets.only(right: 70,bottom: 50,top: 0,left: 30),
@@ -100,18 +87,11 @@ class IntroPage2 extends StatelessWidget {
               ],
               mainAxisAlignment: MainAxisAlignment.end,
             ),
-
           ]
-
-    ),
-
+        ),
               ),
-
-
-
     );
     }
-
   }
 
 

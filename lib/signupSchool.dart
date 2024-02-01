@@ -5,7 +5,7 @@ import 'package:remoo/signIN.dart';
 import 'package:remoo/users_schools.dart';
 import 'forgetpass.dart';
 
-class SignUp extends StatelessWidget {
+class SignUpschool extends StatelessWidget {
   PageController _controller = PageController();
 
   @override
@@ -43,13 +43,13 @@ class SignUp extends StatelessWidget {
                 style: TextStyle(fontSize: 25, color: Colors.blue),
               ),
 
-              // First Name
+              // school Name
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20, top: 30),
                   child: Text(
-                    'First Name',
+                    'School Name',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -73,7 +73,51 @@ class SignUp extends StatelessWidget {
                             decoration: const InputDecoration(
                               prefixIcon: Icon(Icons.person),
                               border: InputBorder.none,
-                              hintText: 'Enter your first name',
+                              hintText: 'Enter your school name',
+                              hintStyle: TextStyle(
+                                fontStyle: FontStyle.italic,
+                                color: Color(0XFFCDDDF9),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              //email
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    'Email',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF7F8F9),
+                          border: Border.all(
+                            color: const Color(0xFFE8ECF4),
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10, right: 10),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              prefixIcon: Icon(Icons.email_outlined),
+                              border: InputBorder.none,
+                              hintText: 'Enter your email',
                               hintStyle: TextStyle(
                                 fontStyle: FontStyle.italic,
                                 color: Color(0XFFCDDDF9),
@@ -93,7 +137,7 @@ class SignUp extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20, top: 20),
                   child: Text(
-                    'Last Name',
+                    'Location',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -115,9 +159,9 @@ class SignUp extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 10, right: 10),
                           child: TextFormField(
                             decoration: const InputDecoration(
-                              prefixIcon: Icon(Icons.person),
+                              prefixIcon: Icon(Icons.location_on_outlined),
                               border: InputBorder.none,
-                              hintText: 'Enter your last name',
+                              hintText: 'Enter your location',
                               hintStyle: TextStyle(
                                 fontStyle: FontStyle.italic,
                                 color: Color(0XFFCDDDF9),
@@ -132,50 +176,6 @@ class SignUp extends StatelessWidget {
               ),
 
               // Nationality
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
-                  child: Text(
-                    'Nationality',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              Container(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFF7F8F9),
-                          border: Border.all(
-                            color: const Color(0xFFE8ECF4),
-                          ),
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 10, right: 10),
-                          child: TextFormField(
-                            decoration: const InputDecoration(
-                              prefixIcon: Icon(Icons.flag),
-                              border: InputBorder.none,
-                              hintText: 'Enter your nationality',
-                              hintStyle: TextStyle(
-                                fontStyle: FontStyle.italic,
-                                color: Color(0XFFCDDDF9),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              //phone num
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
@@ -202,7 +202,6 @@ class SignUp extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(left: 10, right: 10),
                           child: TextFormField(
-                            keyboardType: TextInputType.phone,
                             decoration: const InputDecoration(
                               prefixIcon: Icon(Icons.phone),
                               border: InputBorder.none,
@@ -219,6 +218,8 @@ class SignUp extends StatelessWidget {
                   ],
                 ),
               ),
+
+              // Email
 
               // Password
               Align(

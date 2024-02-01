@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'onboardingScreen.dart';
-import 'package:remoo/splashScreen.dart';
+import 'package:remoo/welcome.dart';
 
 void main() {
   runApp(MyApp());

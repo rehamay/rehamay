@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:remoo/signIN.dart';
 import 'introScreens/introPage3.dart';
-
+import 'package:remoo/signinschool.dart';
 
 
 class UserSchool extends StatelessWidget {
@@ -66,8 +66,18 @@ class UserSchool extends StatelessWidget {
                         )
                       ],
                     ),
-                    child:Center(child: Text('User',style: TextStyle(fontSize: 20,color: Colors.blue.shade500,fontWeight: FontWeight.w700))
-                    ),
+                      child:Center(child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context,MaterialPageRoute(builder: (context){
+                              return SignIn();
+                            },
+                            ),
+                            );
+                          },
+                          child: Text('user',style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.blue.shade500,
+                              fontWeight: FontWeight.w700),)))
                   ),
                 ),
               ),
@@ -101,12 +111,15 @@ class UserSchool extends StatelessWidget {
                 child:Center(child: GestureDetector(
                     onTap: (){
                       Navigator.push(context,MaterialPageRoute(builder: (context){
-                        return SignIn();
+                        return SignInSchool();
                       },
                       ),
                       );
                     },
-                    child: Text('School',style: TextStyle(fontSize: 20,color: Colors.blue.shade500,fontWeight: FontWeight.w700),)))
+                    child: Text('School',style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.blue.shade500,
+                        fontWeight: FontWeight.w700),)))
             ),
             Spacer(flex: 8,),
           ],
