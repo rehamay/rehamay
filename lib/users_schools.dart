@@ -11,14 +11,7 @@ class UserSchool extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-          appBarTheme: AppBarTheme(
-              systemOverlayStyle: SystemUiOverlayStyle(
-                  statusBarColor:Colors.blue,
-                  statusBarBrightness: Brightness.dark
-              )
-          )
-      ),
+
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color(0XFFCDDDF9),

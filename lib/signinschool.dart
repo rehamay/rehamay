@@ -4,10 +4,8 @@ import 'package:remoo/introScreens/introPage1.dart';
 import 'package:remoo/registerscreen.dart';
 import 'package:remoo/signupSchool.dart';
 import 'package:remoo/users_schools.dart';
-import 'package:remoo/complete profile.dart';
-
-
-
+import 'package:remoo/School_profile.dart';
+import 'home_page_sch.dart';
 import 'forgetpass.dart';
 
 class SignInSchool extends StatelessWidget {
@@ -243,7 +241,7 @@ class SignInSchool extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfilePage(),
+                              builder: (context) => Home_Page(),
                             ),
                           );
                         },

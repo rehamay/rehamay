@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/introScreens/introPage1.dart';
 import 'package:remoo/registerscreen.dart';
 import 'package:remoo/users_schools.dart';
-import 'package:remoo/complete profile.dart';
+
 
 
 
 import 'forgetpass.dart';
+import 'home_page_parent.dart';
 
 class SignIn extends StatelessWidget {
   PageController _controller = PageController();
@@ -100,6 +100,7 @@ class SignIn extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: 10),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
@@ -201,7 +202,7 @@ class SignIn extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProfilePage(),
+                              builder: (context) => Home_Page_Parent(),
                             ),
                           );
                         },

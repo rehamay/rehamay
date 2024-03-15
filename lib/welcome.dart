@@ -6,12 +6,6 @@ class Welcome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarColor: Colors.blue,
-          statusBarBrightness: Brightness.dark,
-        ),
-      ),
       body: SafeArea(
         child: Column(
           children: [

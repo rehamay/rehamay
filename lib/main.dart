@@ -7,20 +7,14 @@ void main() {
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor:Colors.blue,
-            statusBarBrightness: Brightness.dark
-          )
-        )
-      ),
+      initialRoute: '/paymentmethod',
+      routes: {
+        'welcome':((context)=> Welcome()),
+      },
       home: OnBoardingScreen(),
     );
 
