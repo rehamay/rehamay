@@ -141,17 +141,7 @@ class Sch_Profile extends StatelessWidget {
                     ),
                     trailing: Icon(Icons.arrow_forward_ios),
                   ),
-                  ListTile(
-                    leading: Icon(Icons.add, color: Colors.black),
-                    title: Text(
-                      "Add Account",
-                      style: TextStyle(
-                        color: Colors.black, // Replace with the appropriate color
-                        fontSize: 20, // Replace with the desired font size
-                      ),
-                    ),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                  ),
+                 
                   ListTile(
                     leading: Icon(Icons.delete, color: Colors.black),
                     title: Text(

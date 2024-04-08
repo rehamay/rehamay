@@ -131,6 +131,52 @@ class SignUp extends StatelessWidget {
                 ),
               ),
 
+              // Email
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    'Email',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF7F8F9),
+                          border: Border.all(
+                            color: const Color(0xFFE8ECF4),
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10, right: 10),
+                          child: TextFormField(
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: const InputDecoration(
+                              prefixIcon: Icon(Icons.email_outlined),
+                              border: InputBorder.none,
+                              hintText: 'Enter your Email',
+                              hintStyle: TextStyle(
+                                fontStyle: FontStyle.italic,
+                                color: Color(0XFFCDDDF9),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+
               // Nationality
               Align(
                 alignment: Alignment.centerLeft,

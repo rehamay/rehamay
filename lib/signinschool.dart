@@ -120,6 +120,7 @@ class SignInSchool extends StatelessWidget {
                             right: 10,
                           ),
                           child: TextFormField(
+                            keyboardType: TextInputType.emailAddress,
                             decoration: const InputDecoration(
                               prefixIcon: Icon(Icons.email_outlined),
                               suffix: Icon(

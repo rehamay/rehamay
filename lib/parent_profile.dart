@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:remoo/your_profile.dart';
 import 'Payment.dart';
+import 'edit_payment.dart';
 import 'home_page_parent.dart'; // Assuming sign-in file path is correct
 
 class Parent_Profile extends StatelessWidget {
@@ -122,13 +122,17 @@ class Parent_Profile extends StatelessWidget {
                   trailing: Icon(Icons.arrow_forward_ios),
                 ),
               ),
+
+
               const Divider(color: Colors.black87),
+
+
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>  PaymentScreen(), // Navigate back to SignIn widget
+                      builder: (context) =>  const PaymentScreen(), // Navigate back to SignIn widget
                     ),
                   );
                   // Navigate to Payment Method screen
@@ -146,29 +150,20 @@ class Parent_Profile extends StatelessWidget {
                   trailing: Icon(Icons.arrow_forward_ios),
                 ),
               ),
+
+              //settings
               const Divider(color: Colors.black87),
+
               GestureDetector(
                 onTap: () {
-                  // Navigate to Settings screen
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
-                },
-                child: const ListTile(
-                  leading: Icon(Icons.settings, color: Colors.black),
-                  title: Text(
-                    "Settings",
-                    style: TextStyle(
-                      color: Colors.black, // Replace with the appropriate color
-                      fontSize: 20, // Replace with the desired font size
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>   Edit_Payment(), // Navigate back to SignIn widget
                     ),
-                  ),
-                  trailing: Icon(Icons.arrow_forward_ios),
-                ),
-              ),
-              const Divider(color: Colors.black87),
-              GestureDetector(
-                onTap: () {
-                  // Navigate to Help Center screen
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => HelpCenterScreen()));
+                  );
+                  // Navigate to Payment Method screen
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentMethodScreen()));
                 },
                 child: const ListTile(
                   leading: Icon(Icons.help_center_outlined, color: Colors.black),
@@ -183,41 +178,142 @@ class Parent_Profile extends StatelessWidget {
                 ),
               ),
               const Divider(color: Colors.black87),
+
+              //delet account
               GestureDetector(
                 onTap: () {
-                  // Navigate to Privacy screen
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => PrivacyScreen()));
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        height: 250,
+                        child: Column(
+                          children: [
+                            const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 20),
+                              child: Text(
+                                "Delete Account",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            const Text(
+                              "Are you sure you want to delete your account?",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            const Spacer(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                OutlinedButton(
+                                  onPressed: () {
+                                    // Add delete account logic here
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Cancel'),
+                                ),
+                                MaterialButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Yes'),
+                                  color: Colors.blue,
+                                  textColor: Colors.black,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
                 },
                 child: const ListTile(
-                  leading: Icon(Icons.lock, color: Colors.black),
+                  leading: Icon(Icons.delete_forever, color: Colors.black),
                   title: Text(
-                    "Privacy",
+                    "Delete Account",
                     style: TextStyle(
-                      color: Colors.black, // Replace with the appropriate color
-                      fontSize: 20, // Replace with the desired font size
+                      color: Colors.black,
+                      fontSize: 20,
                     ),
                   ),
                   trailing: Icon(Icons.arrow_forward_ios),
                 ),
               ),
               const Divider(color: Colors.black87),
+
+              //logout
               GestureDetector(
                 onTap: () {
-                  // Log Out
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        height: 250,
+                        child: Column(
+                          children: [
+                            const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 20),
+                              child: Text(
+                                "Logout",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            const Text(
+                              "Are you sure you want to logout?",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            const Spacer(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                OutlinedButton(
+                                  onPressed: () {
+                                    // Add delete account logic here
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Cancel'),
+                                ),
+                                MaterialButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Yes'),
+                                  color: Colors.blue,
+                                  textColor: Colors.black,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
                 },
                 child: const ListTile(
-                  leading: Icon(Icons.logout, color: Colors.black),
+                  leading: Icon(Icons.delete_forever, color: Colors.black),
                   title: Text(
-                    "Log Out",
+                    "Logout",
                     style: TextStyle(
-                      color: Colors.black, // Replace with the appropriate color
-                      fontSize: 20, // Replace with the desired font size
+                      color: Colors.black,
+                      fontSize: 20,
                     ),
                   ),
                   trailing: Icon(Icons.arrow_forward_ios),
                 ),
               ),
-              const Divider(color: Colors.black87),
+
             ],
           ),
         ),

@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:remoo/registerscreen.dart';
 import 'package:remoo/users_schools.dart';
-
-
-
-
 import 'forgetpass.dart';
 import 'home_page_parent.dart';
 
@@ -80,6 +76,7 @@ class SignIn extends StatelessWidget {
                             right: 10,
                           ),
                           child: TextFormField(
+                            keyboardType: TextInputType.emailAddress,
                             decoration: const InputDecoration(
                               prefixIcon: Icon(Icons.email_outlined),
                               suffix: Icon(

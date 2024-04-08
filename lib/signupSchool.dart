@@ -114,6 +114,7 @@ class SignUpschool extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(left: 10, right: 10),
                           child: TextFormField(
+                            keyboardType: TextInputType.emailAddress,
                             decoration: const InputDecoration(
                               prefixIcon: Icon(Icons.email_outlined),
                               border: InputBorder.none,
@@ -202,6 +203,7 @@ class SignUpschool extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(left: 10, right: 10),
                           child: TextFormField(
+                            keyboardType: TextInputType.phone,
                             decoration: const InputDecoration(
                               prefixIcon: Icon(Icons.phone),
                               border: InputBorder.none,
