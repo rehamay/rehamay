@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:remoo/parent/signIN.dart';
-import 'package:remoo/users_schools.dart';
+import 'package:remoo/school/signinschool.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
 
 class SignUpschool extends StatelessWidget {
@@ -19,7 +19,7 @@ class SignUpschool extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const UserSchool(),
+                builder: (context) =>  SignInSchool(),
               ),
             );
           },

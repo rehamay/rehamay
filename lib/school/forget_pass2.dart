@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:remoo/parent/signIN.dart';
+import 'forget_pass.dart';
 
 class ForgotPass2 extends StatefulWidget {
   const ForgotPass2({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _ForgotPassState extends State<ForgotPass2> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => SignIn(),
+                builder: (context) => ResetPass1(),
               ),
             );
           },

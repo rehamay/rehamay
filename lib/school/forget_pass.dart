@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/parent/forget2.dart';
+import 'package:remoo/school/signinschool.dart';
+import 'OTP.dart';
 import 'forget_pass2.dart';
 
 class ResetPass1 extends StatefulWidget {
@@ -11,7 +12,9 @@ class ResetPass1 extends StatefulWidget {
 }
 
 class _ResetPassState extends State<ResetPass1> {
+  TextEditingController email= TextEditingController();
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true, // Extend body behind the app bar
@@ -23,11 +26,11 @@ class _ResetPassState extends State<ResetPass1> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ForgotPass(),
+                builder: (context) => SignInSchool(),
               ),
             );
           },
-          icon: Icon(Icons.arrow_circle_left_outlined),
+          icon: const Icon(Icons.arrow_circle_left_outlined),
         ),
       ),
       body: SingleChildScrollView(
@@ -35,31 +38,31 @@ class _ResetPassState extends State<ResetPass1> {
           padding: const EdgeInsets.only(left: 25, right: 25, top: 100),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 80, right: 80, top: 30),
+              const Padding(
+                padding: EdgeInsets.only(left: 80, right: 80, top: 30),
                 child: Image(image: AssetImage('images/logo2.png')),
               ),
-              SizedBox(height: 30),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const SizedBox(height: 30),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   '--------- Reset Password ---------',
                   style: TextStyle(fontSize: 20, color: Colors.blue),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Email
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 40),
+                  padding: EdgeInsets.only(left: 40),
                   child: Text(
                     'Email',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Container(
                 child: Column(
                   children: [
@@ -91,7 +94,7 @@ class _ResetPassState extends State<ResetPass1> {
                   ],
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               // Send Password Reset Button
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -102,11 +105,11 @@ class _ResetPassState extends State<ResetPass1> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ForgotPass2(),
+                        builder: (context) =>  Otp(),
                       ),
                     );
                   },
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.all(15.0),
                     child: Text(
                       "Send Password Reset",
