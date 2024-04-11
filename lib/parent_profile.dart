@@ -156,22 +156,63 @@ class Parent_Profile extends StatelessWidget {
 
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>   Edit_Payment(), // Navigate back to SignIn widget
-                    ),
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        height: 300,
+                        child: Column(
+                          children: [
+                            const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 20),
+                              child: Text(
+                                "Payment Method",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Column(
+
+                            ),
+                            const Spacer(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                OutlinedButton(
+                                  onPressed: () {
+                                    // Add delete account logic here
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Cancel'),
+                                ),
+                                MaterialButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Yes'),
+                                  color: Colors.blue,
+                                  textColor: Colors.black,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                   );
-                  // Navigate to Payment Method screen
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentMethodScreen()));
                 },
                 child: const ListTile(
                   leading: Icon(Icons.help_center_outlined, color: Colors.black),
                   title: Text(
                     "Help Center",
                     style: TextStyle(
-                      color: Colors.black, // Replace with the appropriate color
-                      fontSize: 20, // Replace with the desired font size
+                      color: Colors.black,
+                      fontSize: 20,
                     ),
                   ),
                   trailing: Icon(Icons.arrow_forward_ios),

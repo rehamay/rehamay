@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remoo/parent_profile.dart';
+import 'package:remoo/quiz/quiz_screen.dart';
 
 
 class Home_Page_Parent extends StatefulWidget {
@@ -134,7 +135,12 @@ class CustomAppBar extends StatelessWidget {
 
               IconButton(
                 onPressed: () {
-                  // Add your notification logic here
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuizScreen(),
+                    ),
+                  );
                 },
                 icon: const Icon(Icons.notifications),
                 color: Colors.blue,

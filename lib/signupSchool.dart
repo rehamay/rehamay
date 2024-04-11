@@ -8,6 +8,8 @@ import 'forgetpass.dart';
 class SignUpschool extends StatelessWidget {
   PageController _controller = PageController();
 
+  bool passwordObscured = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,7 +134,7 @@ class SignUpschool extends StatelessWidget {
                 ),
               ),
 
-              // Last Name
+              // Location
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
@@ -176,7 +178,7 @@ class SignUpschool extends StatelessWidget {
                 ),
               ),
 
-              // Nationality
+              // phone
               Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
@@ -221,7 +223,178 @@ class SignUpschool extends StatelessWidget {
                 ),
               ),
 
-              // Email
+              // about
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    'About the school',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF7F8F9),
+                          border: Border.all(
+                            color: const Color(0xFFE8ECF4),
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10, right: 10),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              prefixIcon: Icon(Icons.question_mark),
+                              border: InputBorder.none,
+                              hintText: 'Enter About school',
+                              hintStyle: TextStyle(
+                                fontStyle: FontStyle.italic,
+                                color: Color(0XFFCDDDF9),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // teacher
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    'Teachers',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF7F8F9),
+                          border: Border.all(
+                            color: const Color(0xFFE8ECF4),
+                          ),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10, right: 10),
+                          child: TextFormField(
+                            decoration: const InputDecoration(
+                              prefixIcon: Icon(Icons.school_outlined),
+                              border: InputBorder.none,
+                              hintText: 'Enter Teacher & Staff ',
+                              hintStyle: TextStyle(
+                                fontStyle: FontStyle.italic,
+                                color: Color(0XFFCDDDF9),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              //level
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    'Level',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF7F8F9),
+                    border: Border.all(
+                      color: const Color(0xFFE8ECF4),
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: DropdownButtonFormField<String>(
+                    decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      border: InputBorder.none,
+                      hintText: 'Select',
+                      hintStyle: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        color: Color(0XFFCDDDF9),
+                      ),
+                    ),
+                    items: ['Primary', 'Preparatory','Secondary'].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (newValue) {},
+                  ),
+                ),
+              ),
+
+              // type
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    'Type of school',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF7F8F9),
+                    border: Border.all(
+                      color: const Color(0xFFE8ECF4),
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: DropdownButtonFormField<String>(
+                    decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      border: InputBorder.none,
+                      hintText: 'Select',
+                      hintStyle: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        color: Color(0XFFCDDDF9),
+                      ),
+                    ),
+                    items: ['National', 'International','Both'].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (newValue) {},
+                  ),
+                ),
+              ),
 
               // Password
               Align(
@@ -250,7 +423,7 @@ class SignUpschool extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(left: 10, right: 10),
                           child: TextFormField(
-                            obscureText: true,
+                            obscureText: passwordObscured,
                             decoration: const InputDecoration(
                               prefixIcon: Icon(Icons.lock_open_outlined),
                               border: InputBorder.none,
