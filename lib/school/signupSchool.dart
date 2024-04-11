@@ -2,29 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:remoo/parent/signIN.dart';
 import 'package:remoo/users_schools.dart';
-
+import 'package:multi_select_flutter/multi_select_flutter.dart';
 
 class SignUpschool extends StatelessWidget {
   PageController _controller = PageController();
-
-  bool passwordObscured = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Make app bar background transparent
+        backgroundColor:
+        Colors.transparent, // Make app bar background transparent
         leading: IconButton(
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => UserSchool(),
+                builder: (context) => const UserSchool(),
               ),
             );
           },
-          icon: Icon(Icons.arrow_circle_left_outlined),
+          icon: const Icon(Icons.arrow_circle_left_outlined),
         ),
       ),
       body: SingleChildScrollView(
@@ -33,22 +32,22 @@ class SignUpschool extends StatelessWidget {
           child: Column(
             //logo
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 80, right: 80, top: 0),
+              const Padding(
+                padding: EdgeInsets.only(left: 80, right: 80, top: 0),
                 child: Image(image: AssetImage('images/logo2.png')),
               ),
 
               //sign in!
-              Text(
+              const Text(
                 '-----------  Sign up!  -----------',
                 style: TextStyle(fontSize: 25, color: Colors.blue),
               ),
 
               // school Name
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 30),
+                  padding: EdgeInsets.only(left: 20, top: 30),
                   child: Text(
                     'School Name',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -88,11 +87,11 @@ class SignUpschool extends StatelessWidget {
                 ),
               ),
 
-              //email
-              Align(
+              // email
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
                     'Email',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -134,10 +133,10 @@ class SignUpschool extends StatelessWidget {
               ),
 
               // Location
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
                     'Location',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -178,10 +177,10 @@ class SignUpschool extends StatelessWidget {
               ),
 
               // phone
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
                     'phone number',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -223,10 +222,10 @@ class SignUpschool extends StatelessWidget {
               ),
 
               // about
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
                     'About the school',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -266,10 +265,10 @@ class SignUpschool extends StatelessWidget {
                 ),
               ),
               // teacher
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
                     'Teachers',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -309,7 +308,7 @@ class SignUpschool extends StatelessWidget {
                 ),
               ),
 
-              //level
+              // level
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
@@ -331,23 +330,18 @@ class SignUpschool extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: DropdownButtonFormField<String>(
-                    decoration: const InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      border: InputBorder.none,
-                      hintText: 'Select',
-                      hintStyle: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        color: Color(0XFFCDDDF9),
-                      ),
+                  child: Center(
+                    child: MultiSelectBottomSheetField<String>(
+                      initialChildSize: 0.3,
+                      listType: MultiSelectListType.CHIP,
+                      buttonText: const Text('Select',),
+                      title: const Text('Level'),
+                      items: ['Primary', 'Preparatory', 'Secondary']
+                          .map((String value) => MultiSelectItem<String>(value, value))
+                          .toList(),
+                      onConfirm: (List<String?> values) {
+                      },
                     ),
-                    items: ['Primary', 'Preparatory','Secondary'].map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (newValue) {},
                   ),
                 ),
               ),
@@ -358,7 +352,7 @@ class SignUpschool extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
-                    'Type of school',
+                    'type of school',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -374,32 +368,27 @@ class SignUpschool extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  child: DropdownButtonFormField<String>(
-                    decoration: const InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      border: InputBorder.none,
-                      hintText: 'Select',
-                      hintStyle: TextStyle(
-                        fontStyle: FontStyle.italic,
-                        color: Color(0XFFCDDDF9),
-                      ),
-                    ),
-                    items: ['National', 'International','Both'].map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (newValue) {},
+                  child: MultiSelectBottomSheetField<String>(
+                    initialChildSize: 0.3,
+                    listType: MultiSelectListType.CHIP,
+                    buttonText: const Text('Select'),
+                    title: Center(child: const Text('type',style: TextStyle(color: Colors.black))),
+                    items: ['Primary', 'Preparatory', 'Secondary']
+                        .map((String value) => MultiSelectItem<String>(value, value))
+                        .toList(),
+                    onConfirm: (List<String?> values) {
+                      // Do something with the selected values
+                    },
                   ),
                 ),
               ),
 
+
               // Password
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
                     'Password',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -422,7 +411,7 @@ class SignUpschool extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(left: 10, right: 10),
                           child: TextFormField(
-                            obscureText: passwordObscured,
+                            obscureText: true,
                             decoration: const InputDecoration(
                               prefixIcon: Icon(Icons.lock_open_outlined),
                               border: InputBorder.none,
@@ -441,10 +430,10 @@ class SignUpschool extends StatelessWidget {
               ),
 
               // Confirm Password
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
                     'Confirm Password',
                     style: TextStyle(fontWeight: FontWeight.bold),
