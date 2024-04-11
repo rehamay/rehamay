@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/signIN.dart';
+import 'package:remoo/parent/signIN.dart';
 import 'introScreens/introPage3.dart';
-import 'package:remoo/signinschool.dart';
+import 'package:remoo/school/signinschool.dart';
 
 
 class UserSchool extends StatelessWidget {

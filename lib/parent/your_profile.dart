@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:remoo/parent_profile.dart';
+import 'package:remoo/parent/parent_profile.dart';
 
 // Define the stateless widget
 class your_profile extends StatelessWidget {

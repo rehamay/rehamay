@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/forgetpass.dart';
-import 'package:remoo/forget2.dart';
+import 'package:remoo/parent/forgetpass.dart';
+import 'package:remoo/parent/forget2.dart';
 
 class ResetPass extends StatefulWidget {
   const ResetPass({super.key});

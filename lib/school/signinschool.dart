@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/introScreens/introPage1.dart';
-import 'package:remoo/registerscreen.dart';
-import 'package:remoo/signupSchool.dart';
+import 'package:remoo/school/signupSchool.dart';
 import 'package:remoo/users_schools.dart';
-import 'package:remoo/School_profile.dart';
 import 'home_page_sch.dart';
-import 'forgetpass.dart';
+import 'forget_pass.dart';
 
 class SignInSchool extends StatelessWidget {
   PageController _controller = PageController();
@@ -209,7 +206,7 @@ class SignInSchool extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ResetPass(),
+                          builder: (context) => const ResetPass1(),
                         ),
                       );
                     },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remoo/quiz/question_model.dart';
-import '../home_page_parent.dart';
+import '../parent/home_page_parent.dart';
 
 class QuizScreen extends StatefulWidget {
   @override

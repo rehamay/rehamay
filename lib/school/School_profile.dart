@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/home_page_sch.dart'; // Assuming sign-in file path is correct
+import 'package:remoo/school/home_page_sch.dart'; // Assuming sign-in file path is correct
 
 class Sch_Profile extends StatelessWidget {
   const Sch_Profile({Key? key}) : super(key: key);

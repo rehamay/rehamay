@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/parent_profile.dart';
+import 'package:remoo/parent/parent_profile.dart';
 
 
 void main() {

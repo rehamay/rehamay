@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:remoo/your_profile.dart';
-import 'Payment.dart';
+import 'package:remoo/parent/your_profile.dart';
+import '../Payment.dart';
 import 'edit_payment.dart';
 import 'home_page_parent.dart'; // Assuming sign-in file path is correct
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:remoo/parent_profile.dart';
+import 'package:remoo/parent/parent_profile.dart';
 import 'package:remoo/quiz/quiz_screen.dart';
 
 

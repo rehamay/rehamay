@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/forget2.dart';
-import 'package:remoo/signIN.dart';
+import 'package:remoo/parent/signIN.dart';
 
-class ForgotPass extends StatefulWidget {
-  const ForgotPass({Key? key}) : super(key: key);
+class ForgotPass2 extends StatefulWidget {
+  const ForgotPass2({Key? key}) : super(key: key);
 
   @override
-  State<ForgotPass> createState() => _ForgotPassState();
+  State<ForgotPass2> createState() => _ForgotPassState();
 }
 
-class _ForgotPassState extends State<ForgotPass> {
+class _ForgotPassState extends State<ForgotPass2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

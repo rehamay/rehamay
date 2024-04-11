@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:remoo/introScreens/introPage1.dart';
-import 'package:remoo/signIN.dart';
+import 'package:remoo/parent/signIN.dart';
 import 'package:remoo/users_schools.dart';
 import 'forgetpass.dart';
 
