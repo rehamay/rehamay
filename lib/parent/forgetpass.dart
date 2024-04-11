@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/parent/forgetpass.dart';
 import 'package:remoo/parent/forget2.dart';
+
+import '../school/OTP.dart';
 
 class ResetPass extends StatefulWidget {
   const ResetPass({super.key});
@@ -102,7 +103,7 @@ class _ResetPassState extends State<ResetPass> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ForgotPass(),
+                        builder: (context) => Otp(),
                       ),
                     );
                   },
