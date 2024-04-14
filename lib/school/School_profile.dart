@@ -1,6 +1,9 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remoo/school/home_page_sch.dart'; // Assuming sign-in file path is correct
+import 'package:image_picker/image_picker.dart';
+import 'package:remoo/school/home_page_sch.dart';
+import 'package:remoo/school/photo_video.dart';
 
 class Sch_Profile extends StatelessWidget {
   const Sch_Profile({Key? key}) : super(key: key);
@@ -22,12 +25,6 @@ class Sch_Profile extends StatelessWidget {
           },
           icon: const Icon(Icons.arrow_circle_left_outlined),
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {},
-          )
-        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -47,6 +44,7 @@ class Sch_Profile extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10), // Add space between profile image and text
+
               Center(
                 child: Stack(
                   children: [
@@ -68,28 +66,11 @@ class Sch_Profile extends StatelessWidget {
                         ],
                         shape: BoxShape.circle,
                         image: const DecorationImage(
-                          fit: BoxFit.cover, // Fix typo here
-                          image: NetworkImage("https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"),
+                          fit: BoxFit.cover,
+                          image: NetworkImage("https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740"),
                         ),
                       ),
                     ),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            width: 4,
-                            color: Theme.of(context).scaffoldBackgroundColor,
-                          ),
-                          color: Colors.grey,
-                        ),
-                        child: const Icon(Icons.add_a_photo, color: Colors.black),
-                      ),
-                    )
                   ],
                 ),
               ),
@@ -105,72 +86,129 @@ class Sch_Profile extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 50), // Add space between profile image and titles with icons
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ListTile(
-                    leading: Icon(Icons.content_paste_go, color: Colors.black),
-                    title: Text(
-                      "Application Submitted",
-                      style: TextStyle(
-                        color: Colors.black, // Replace with the appropriate color
-                        fontSize: 20, // Replace with the desired font size
-                      ),
+              GestureDetector(
+                onTap: () {},
+                child: const ListTile(
+                  leading: Icon(Icons.person, color: Colors.black),
+                  title: Text(
+                    "Application Submitted",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
                     ),
-                    trailing: Icon(Icons.arrow_forward_ios),
                   ),
-                  ListTile(
-                    leading: Icon(Icons.add_a_photo, color: Colors.black),
-                    title: Text(
-                      "Add Photo",
-                      style: TextStyle(
-                        color: Colors.black, // Replace with the appropriate color
-                        fontSize: 20, // Replace with the desired font size
-                      ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
+              ),
+
+              const Divider(color: Colors.black87),
+
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Photo(),
                     ),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.payment, color: Colors.black),
-                    title: Text(
-                      "Payment",
-                      style: TextStyle(
-                        color: Colors.black, // Replace with the appropriate color
-                        fontSize: 20, // Replace with the desired font size
-                      ),
+                  );
+                },
+                child: const ListTile(
+                  leading: Icon(Icons.photo, color: Colors.black),
+                  title: Text(
+                    "Add Photo",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
                     ),
-                    trailing: Icon(Icons.arrow_forward_ios),
                   ),
-                 
-                  ListTile(
-                    leading: Icon(Icons.delete, color: Colors.black),
-                    title: Text(
-                      "Delete Account",
-                      style: TextStyle(
-                        color: Colors.black, // Replace with the appropriate color
-                        fontSize: 20, // Replace with the desired font size
-                      ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
+              ),
+              const Divider(color: Colors.black87),
+
+              GestureDetector(
+                onTap: () {},
+                child: const ListTile(
+                  leading: Icon(Icons.payment, color: Colors.black),
+                  title: Text(
+                    "Payment Method",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
                     ),
-                    trailing: Icon(Icons.arrow_forward_ios),
                   ),
-                  ListTile(
-                    leading: Icon(Icons.logout, color: Colors.black),
-                    title: Text(
-                      "Log Out",
-                      style: TextStyle(
-                        color: Colors.black, // Replace with the appropriate color
-                        fontSize: 20, // Replace with the desired font size
-                      ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
+              ),
+
+              const Divider(color: Colors.black87),
+
+              GestureDetector(
+                onTap: () {
+                  _showConfirmationDialog(context, "Delete Account", "Are you sure you want to delete your account?");
+                },
+                child: const ListTile(
+                  leading: Icon(Icons.delete_forever, color: Colors.black),
+                  title: Text(
+                    "Delete Account",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
                     ),
-                    trailing: Icon(Icons.arrow_forward_ios),
                   ),
-                ],
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
+              ),
+              const Divider(color: Colors.black87),
+
+              GestureDetector(
+                onTap: () {
+                  _showConfirmationDialog(context, "Logout", "Are you sure you want to logout?");
+                },
+                child: const ListTile(
+                  leading: Icon(Icons.logout, color: Colors.black),
+                  title: Text(
+                    "Logout",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
               ),
             ],
           ),
         ),
       ),
+    );
+  }
 
+
+  void _showConfirmationDialog(BuildContext context, String title, String message) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(title),
+          content: Text(message),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                // Perform action when user confirms
+              },
+              child: Text('Yes'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

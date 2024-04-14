@@ -1,8 +1,10 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:remoo/parent/your_profile.dart';
 import '../Payment.dart';
 import 'edit_payment.dart';
-import 'home_page_parent.dart'; // Assuming sign-in file path is correct
+import 'home_page_parent.dart';
 
 class Parent_Profile extends StatelessWidget {
   const Parent_Profile({Key? key}) : super(key: key);
@@ -12,11 +14,7 @@ class Parent_Profile extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title:const Text("Profile",style:TextStyle(color: Colors.blue,
-            fontWeight:FontWeight.bold,
-            fontSize: 25),) ,
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
+        backgroundColor: Colors.transparent, // Make app bar background transparent
         leading: IconButton(
           onPressed: () {
             Navigator.push(
@@ -28,12 +26,6 @@ class Parent_Profile extends StatelessWidget {
           },
           icon: const Icon(Icons.arrow_circle_left_outlined),
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {},
-          )
-        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -41,8 +33,19 @@ class Parent_Profile extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 10), // Add space between app bar and profile image
+              const Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 14), // Adjust top padding as needed
+                  child: Text(
+                    'Profile',
+                    style: TextStyle(fontSize: 40, color: Colors.blue, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10), // Add space between profile image and text
 
-              const SizedBox(height: 15), // Add space between profile image and text
               Center(
                 child: Stack(
                   children: [
@@ -69,23 +72,7 @@ class Parent_Profile extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            width: 4,
-                            color: Theme.of(context).scaffoldBackgroundColor,
-                          ),
-                          color: Colors.grey,
-                        ),
-                        child: const Icon(Icons.add_a_photo, color: Colors.black),
-                      ),
-                    )
+
                   ],
                 ),
               ),
@@ -106,7 +93,7 @@ class Parent_Profile extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                      builder: (context) => const your_profile(), // Navigate back to SignIn widget
+                      builder: (context) => const Your_profile(), // Navigate back to SignIn widget
                   ),// Navigate to Your Profile screen
                   );// Navigator.push(context, MaterialPageRoute(builder: (context) => YourProfileScreen()));
                 },
@@ -223,56 +210,7 @@ class Parent_Profile extends StatelessWidget {
               //delet account
               GestureDetector(
                 onTap: () {
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return SizedBox(
-                        height: 250,
-                        child: Column(
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 20),
-                              child: Text(
-                                "Delete Account",
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            const Text(
-                              "Are you sure you want to delete your account?",
-                              style: TextStyle(fontSize: 18),
-                            ),
-                            const Spacer(),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                OutlinedButton(
-                                  onPressed: () {
-                                    // Add delete account logic here
-                                    Navigator.pop(context);
-                                  },
-                                  child: const Text('Cancel'),
-                                ),
-                                MaterialButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: const Text('Yes'),
-                                  color: Colors.blue,
-                                  textColor: Colors.black,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
+                  _showConfirmationDialog(context, "Delete Account", "Are you sure you want to delete your account?");
                 },
                 child: const ListTile(
                   leading: Icon(Icons.delete_forever, color: Colors.black),
@@ -288,62 +226,12 @@ class Parent_Profile extends StatelessWidget {
               ),
               const Divider(color: Colors.black87),
 
-              //logout
               GestureDetector(
                 onTap: () {
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return SizedBox(
-                        height: 250,
-                        child: Column(
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 20),
-                              child: Text(
-                                "Logout",
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            const Text(
-                              "Are you sure you want to logout?",
-                              style: TextStyle(fontSize: 18),
-                            ),
-                            const Spacer(),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                OutlinedButton(
-                                  onPressed: () {
-                                    // Add delete account logic here
-                                    Navigator.pop(context);
-                                  },
-                                  child: const Text('Cancel'),
-                                ),
-                                MaterialButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: const Text('Yes'),
-                                  color: Colors.blue,
-                                  textColor: Colors.black,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
+                  _showConfirmationDialog(context, "Logout", "Are you sure you want to logout?");
                 },
                 child: const ListTile(
-                  leading: Icon(Icons.delete_forever, color: Colors.black),
+                  leading: Icon(Icons.logout, color: Colors.black),
                   title: Text(
                     "Logout",
                     style: TextStyle(
@@ -354,7 +242,6 @@ class Parent_Profile extends StatelessWidget {
                   trailing: Icon(Icons.arrow_forward_ios),
                 ),
               ),
-
             ],
           ),
         ),
@@ -362,3 +249,31 @@ class Parent_Profile extends StatelessWidget {
     );
   }
 }
+void _showConfirmationDialog(BuildContext context, String title, String message) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              // Perform action when user confirms
+            },
+            child: Text('Yes'),
+          ),
+        ],
+      );
+    },
+  );
+}
+
+

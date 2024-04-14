@@ -19,11 +19,11 @@ class SignInSchool extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => UserSchool(),
+                builder: (context) => const UserSchool(),
               ),
             );
           },
-          icon: Icon(Icons.arrow_circle_left_outlined),
+          icon: const Icon(Icons.arrow_circle_left_outlined),
         ),
       ),
       body: SingleChildScrollView(
@@ -32,20 +32,20 @@ class SignInSchool extends StatelessWidget {
           child: Column(
             //logo
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 80, right: 80, top: 0),
+              const Padding(
+                padding: EdgeInsets.only(left: 80, right: 80, top: 0),
                 child: Image(image: AssetImage('images/logo2.png')),
               ),
 
               //sign in!
-              Text(
+              const Text(
                 '-----------  Sign in!  -----------',
                 style: TextStyle(fontSize: 25, color: Colors.blue),
               ),
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 30),
+                  padding: EdgeInsets.only(left: 20, top: 30),
                   child: Text(
                     'School Name',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -85,10 +85,10 @@ class SignInSchool extends StatelessWidget {
                 ),
               ),
               //email
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
                     'Email',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -138,10 +138,10 @@ class SignInSchool extends StatelessWidget {
                   ],
                 ),
               ),
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
                     'Password ',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -239,7 +239,7 @@ class SignInSchool extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Home_Page(),
+                              builder: (context) => const Home_Page(),
                             ),
                           );
                         },

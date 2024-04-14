@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:remoo/parent/parent_profile.dart';
+import 'dart:io';
 
-// Define the stateless widget
-class your_profile extends StatelessWidget {
-  // Constructor
-  const your_profile({Key? key}) : super(key: key);
+
+class Your_profile extends StatelessWidget {
+
+  const Your_profile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,6 @@ class your_profile extends StatelessWidget {
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
-            // Navigate back to the previous screen
             Navigator.pop(context);
           },
           icon: const Icon(Icons.arrow_circle_left_outlined),
@@ -30,7 +31,6 @@ class your_profile extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Add space between profile image and text
               const SizedBox(height: 15),
 
               // Profile image
@@ -56,8 +56,7 @@ class your_profile extends StatelessWidget {
                         shape: BoxShape.circle,
                         image: const DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(
-                              "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"),
+                          image: NetworkImage("https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"),
                         ),
                       ),
                     ),
@@ -75,7 +74,12 @@ class your_profile extends StatelessWidget {
                           ),
                           color: Colors.grey,
                         ),
-                        child: const Icon(Icons.add_a_photo, color: Colors.black),
+                        child: InkWell(
+                          onTap: () {
+                            _showImagePicker(context);
+                          },
+                          child: const Icon(Icons.add_a_photo, color: Colors.black),
+                        ),
                       ),
                     )
                   ],
@@ -384,5 +388,51 @@ class your_profile extends StatelessWidget {
     if (picked != null) {
       // Do something with the picked date
     }
+  }
+}
+void _showImagePicker(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (BuildContext context) {
+      return Container(
+        height: 150,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ListTile(
+              leading: Icon(Icons.camera_alt),
+              title: Text('Camera'),
+              onTap: () {
+                Navigator.pop(context);
+                _getImage(ImageSource.camera, context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.image),
+              title: Text('Gallery'),
+              onTap: () {
+                Navigator.pop(context);
+                _getImage(ImageSource.gallery, context);
+              },
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
+void _getImage(ImageSource source, BuildContext context) async {
+  final picker = ImagePicker();
+  final pickedFile = await picker.pickImage(source: source);
+
+  if (pickedFile != null) {
+    // Do something with the picked image file
+    // For example, you can display the picked image or upload it to a server
+    File? imageFile = File(pickedFile.path);
+    // Add your logic here to handle the image file
+  } else {
+    // User canceled the picker
   }
 }
