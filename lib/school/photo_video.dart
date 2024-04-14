@@ -114,299 +114,47 @@ class _PhotoState extends State<Photo> {
                   child: Column(
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Material(
-                            color: Colors.blueGrey,
-                            borderRadius: BorderRadius.circular(15),
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: InkWell(
-                              onTap: (){
-                                _showImagePicker(context);
-                              },
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Ink.image(image:
-                                  const NetworkImage('https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
-                                    height: 150,
-                                    width: 150,
-                                    fit: BoxFit.cover
-                                    ,),
-                                  const Text('Add Background '),
-                                  const Icon(Icons.add)
-                                ],
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 50),
-                          Row(
-                            children: [
-                              Material(
-                                color: Colors.blueGrey,
-                                borderRadius: BorderRadius.circular(15),
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                child: InkWell(
-                                  onTap: (){
-                                    _showImagePicker(context);
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Ink.image(image:
-                                      const NetworkImage('https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
-                                        height: 150,
-                                        width: 150,
-                                        fit: BoxFit.cover
-                                        ,),
-                                      const Text('Add Photo 1'),
-                                      const Icon(Icons.add)
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
+                          _buildPhotoItem(context, 'Add Background', 'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
+                          const SizedBox(width: 20),
+                          _buildPhotoItem(context, 'Add Photo 1', 'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
                         ],
                       ),
-
                       const SizedBox(height: 20),
-                  Column(
-                    children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Material(
-                            color: Colors.blueGrey,
-                            borderRadius: BorderRadius.circular(15),
-                            clipBehavior: Clip.antiAliasWithSaveLayer,
-                            child: InkWell(
-                              onTap: (){
-                                _showImagePicker(context);
-                              },
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Ink.image(image:
-                                  const NetworkImage('https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
-                                    height: 150,
-                                    width: 150,
-                                    fit: BoxFit.cover
-                                    ,),
-                                  const Text('Add Photo 2'),
-                                  const Icon(Icons.add)
-                                ],
-                              ),
-                            ),
-                          ),
-                          const SizedBox(width: 50),
-                          Row(
-                            children: [
-                              Material(
-                                color: Colors.blueGrey,
-                                borderRadius: BorderRadius.circular(15),
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                child: InkWell(
-                                  onTap: (){
-                                    _showImagePicker(context);
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Ink.image(image:
-                                      const NetworkImage('https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
-                                        height: 150,
-                                        width: 150,
-                                        fit: BoxFit.cover
-                                        ,),
-                                      const Text('Add Photo 3'),
-                                      const Icon(Icons.add)
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                      const SizedBox(height: 20),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              Material(
-                                color: Colors.blueGrey,
-                                borderRadius: BorderRadius.circular(15),
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                child: InkWell(
-                                  onTap: (){
-                                    _showImagePicker(context);
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Ink.image(image:
-                                      const NetworkImage('https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
-                                        height: 150,
-                                        width: 150,
-                                        fit: BoxFit.cover
-                                        ,),
-                                      const Text('Add Photo 4'),
-                                      const Icon(Icons.add)
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 50),
-                              Row(
-                                children: [
-                                  Material(
-                                    color: Colors.blueGrey,
-                                    borderRadius: BorderRadius.circular(15),
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    child: InkWell(
-                                      onTap: (){
-                                        _showImagePicker(context);
-                                      },
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Ink.image(image:
-                                          const NetworkImage('https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
-                                            height: 150,
-                                            width: 150,
-                                            fit: BoxFit.cover
-                                            ,),
-                                          const Text('Add Photo 5'),
-                                          const Icon(Icons.add)
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
+                          _buildPhotoItem(context, 'Add Photo 2', 'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
+                          const SizedBox(width: 20),
+                          _buildPhotoItem(context, 'Add Photo 3', 'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
                         ],
                       ),
                       const SizedBox(height: 20),
-                      Column(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Row(
-                            children: [
-                              Material(
-                                color: Colors.blueGrey,
-                                borderRadius: BorderRadius.circular(15),
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                child: InkWell(
-                                  onTap: (){
-                                    _showImagePicker(context);
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Ink.image(image:
-                                      const NetworkImage('https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
-                                        height: 150,
-                                        width: 150,
-                                        fit: BoxFit.cover
-                                        ,),
-                                      const Text('Add Photo 6'),
-                                      const Icon(Icons.add)
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 50),
-                              Row(
-                                children: [
-                                  Material(
-                                    color: Colors.blueGrey,
-                                    borderRadius: BorderRadius.circular(15),
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    child: InkWell(
-                                      onTap: (){
-                                        _showImagePicker(context);
-                                      },
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Ink.image(image:
-                                          const NetworkImage('https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
-                                            height: 150,
-                                            width: 150,
-                                            fit: BoxFit.cover
-                                            ,),
-                                          const Text('Add Photo 7'),
-                                          const Icon(Icons.add)
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
+                          _buildPhotoItem(context, 'Add Photo 4', 'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
+                          const SizedBox(width: 20),
+                          _buildPhotoItem(context, 'Add Photo 5', 'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
                         ],
                       ),
                       const SizedBox(height: 20),
-                      Column(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Row(
-                            children: [
-                              Material(
-                                color: Colors.blueGrey,
-                                borderRadius: BorderRadius.circular(15),
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                child: InkWell(
-                                  onTap: (){
-                                    _showImagePicker(context);
-                                  },
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Ink.image(image:
-                                      const NetworkImage('https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
-                                        height: 150,
-                                        width: 150,
-                                        fit: BoxFit.cover
-                                        ,),
-                                      const Text('Add Photo 8'),
-                                      const Icon(Icons.add)
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 50),
-                              Row(
-                                children: [
-                                  Material(
-                                    color: Colors.blueGrey,
-                                    borderRadius: BorderRadius.circular(15),
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    child: InkWell(
-                                      onTap: (){
-                                        _showImagePicker(context);
-                                      },
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Ink.image(image:
-                                          const NetworkImage('https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
-                                            height: 150,
-                                            width: 150,
-                                            fit: BoxFit.cover
-                                            ,),
-                                          const Text('Add Photo9'),
-                                          const Icon(Icons.add)
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
+                          _buildPhotoItem(context, 'Add Photo 6', 'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
+                          const SizedBox(width: 20),
+                          _buildPhotoItem(context, 'Add Photo 7', 'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _buildPhotoItem(context, 'Add Photo 8', 'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
+                          const SizedBox(width: 20),
+                          _buildPhotoItem(context, 'Add Photo 9', 'https://img.freepik.com/premium-vector/education-school-logo-design_586739-1335.jpg?w=740'),
                         ],
                       ),
                     ],
@@ -417,6 +165,32 @@ class _PhotoState extends State<Photo> {
             ],
 
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPhotoItem(BuildContext context, String title, String imageUrl) {
+    return Material(
+      color: Colors.blueGrey,
+      borderRadius: BorderRadius.circular(15),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: InkWell(
+        onTap: (){
+          _showImagePicker(context);
+        },
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Ink.image(
+              image: NetworkImage(imageUrl),
+              height: 150,
+              width: 150,
+              fit: BoxFit.cover,
+            ),
+            Text(title),
+            const Icon(Icons.add)
+          ],
         ),
       ),
     );
@@ -467,4 +241,11 @@ class _PhotoState extends State<Photo> {
       // User canceled the picker
     }
   }
+}
+
+void main() {
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: Photo(),
+  ));
 }

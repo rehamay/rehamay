@@ -1,7 +1,6 @@
-import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:remoo/school/home_page_sch.dart';
 import 'package:remoo/school/photo_video.dart';
 
