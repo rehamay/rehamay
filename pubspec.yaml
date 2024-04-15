@@ -111,6 +111,8 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_native_splash:
+  image: images/logoo1.png
+
   # This package generates native code to customize Flutter's default white native splash screen
   # with background color and splash image.
   # Customize the parameters below, and run the following command in the terminal:
@@ -169,7 +171,7 @@ flutter_native_splash:
   #image: assets/android12splash.png
 
   # Splash screen background color.
-   color: "#42a5f5"
+  # color: "#42a5f5"
 
   # App icon background color.
   #icon_background_color: "#111111"
@@ -198,7 +200,7 @@ flutter_native_splash:
   #color_dark_ios: "#042a49"
   #color_web: "#42a5f5"
   #color_dark_web: "#042a49"
-  image_android: images/logoo1.png
+  #image_android: images/logoo1.png
   #image_dark_android: assets/splash-invert-android.png
   #image_ios: assets/splash-ios.png
   #image_dark_ios: assets/splash-invert-ios.png

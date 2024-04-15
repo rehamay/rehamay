@@ -22,7 +22,7 @@ class Welcome extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Expanded(
+            const Expanded(
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -34,7 +34,7 @@ class Welcome extends StatelessWidget {
 
                     Divider(thickness: 0, color: Colors.transparent),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 150),
+                      padding: EdgeInsets.only(bottom: 150),
                       child: Text(
                         'online admission',
                         style: TextStyle(fontWeight: FontWeight.bold),
