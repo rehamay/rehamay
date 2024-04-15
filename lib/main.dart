@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'welcome':((context)=> Welcome()),
       },
-      home: Splash(),
+      home: const Splash(),
     );
   }
 }
