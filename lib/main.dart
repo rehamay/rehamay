@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:remoo/splash.dart';
-import 'onboardingScreen.dart';
 import 'package:remoo/welcome.dart';
 
 void main() {

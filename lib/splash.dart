@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:remoo/onboardingScreen.dart';
 
 class Splash extends StatefulWidget {
@@ -45,11 +44,14 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child: Image.asset(
-                'images/logoo1.png',
-                fit: BoxFit.contain, // Ensure the image fills the available space
-                height: 500, // Adjust the height as needed
-                width: 500, // Adjust the width as needed
+              child: Padding(
+                padding: const EdgeInsets.only(left: 35),
+                child: Image.asset(
+                  'images/logoo1.png',
+                  fit: BoxFit.contain, // Ensure the image fills the available space
+                  height: 500, // Adjust the height as needed
+                  width: 500, // Adjust the width as needed
+                ),
               ),
             ),
           ],
